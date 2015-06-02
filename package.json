@@ -1,14 +1,14 @@
 {
   "name": "easy-crawler",
   "version": "0.1.0",
-  "description": "Simple Node.js Crawler with Queue Support",
+  "description": "Simple and Easy Crawler library for Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SamirL/easy-crawler.git"
+    "url": "git://github.com/SamirL/easy-crawler.git"
   },
   "keywords": [
     "crawler",

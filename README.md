@@ -5,17 +5,17 @@ A simple webcrawler for Node.js supporting Concurrent Connections and Queues.
 
 ## Installation
 
-		npm install simple-crawler
+		npm install easy-crawler
 
 ## Usage
 ```javascript
-var Crawler = require('simple-crawler');
+var Crawler = require('easy-crawler');
 
 var crawler = new Crawler({
 	thread: 5,
 	logs: true,
 	depth: 2,
-	headers : {'user-agent' : 'simple-scraper'},
+	headers : {'user-agent' : 'easy-scraper'},
 	onSuccess : function(data){
 		//console.log(data.url);
 		//console.log(data.body);
