@@ -1,0 +1,35 @@
+{
+  "name": "easy-crawler",
+  "version": "0.1.0",
+  "description": "Simple Node.js Crawler with Queue Support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SamirL/easy-crawler.git"
+  },
+  "keywords": [
+    "crawler",
+    "spider",
+    "nodejs",
+    "scraper"
+  ],
+  "dependencies": {
+    "underscore": "1.8.3",
+    "request": "2.42.0",
+    "url" : "0.10.3"
+  },
+  "author": "Adil Lach <mesdevisdunet@gmail.com>",
+  "license": [
+      {
+        "type": "MIT",
+        "url": "https://github.com/SamirL/easy-crawler/blob/master/LICENCE"
+      }
+  ],
+  "bugs": {
+    "url": "https://github.com/SamirL/easy-crawler/issues"
+  },
+  "homepage": "https://github.com/SamirL/easy-crawler"
+}
