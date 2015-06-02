@@ -1,5 +1,5 @@
 {
-  "name": "easy-crawler",
+  "name": "easycrawler",
   "version": "0.1.0",
   "description": "Simple and Easy Crawler library for Node.js",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/SamirL/easy-crawler.git"
+    "url": "git://github.com/SamirL/easycrawler.git"
   },
   "keywords": [
     "crawler",
@@ -25,11 +25,11 @@
   "license": [
       {
         "type": "MIT",
-        "url": "https://github.com/SamirL/easy-crawler/blob/master/LICENCE"
+        "url": "https://github.com/SamirL/easycrawler/blob/master/LICENCE"
       }
   ],
   "bugs": {
-    "url": "https://github.com/SamirL/easy-crawler/issues"
+    "url": "https://github.com/SamirL/easycrawler/issues"
   },
-  "homepage": "https://github.com/SamirL/easy-crawler"
+  "homepage": "https://github.com/SamirL/easycrawler"
 }
