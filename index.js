@@ -140,7 +140,7 @@ Crawler.prototype.load = function(url, depth) {
 		}
 
 		this.finished(url);
-	}.bind(this));;
+	}.bind(this));
 }
 
 Crawler.prototype.crawl = function(url){
