@@ -16,6 +16,8 @@ function Crawler(opts){
 	this.crawledUrls = [];
 	this.discoveredUrls = [];
 	this.active = [];
+
+	this.onlyCrawl = opts.onlyCrawl || [];
 }
 
 
@@ -99,6 +101,16 @@ Crawler.prototype.getLinks = function(baseUrl, body){
  	});
 
  	return _.chain(links)
+ 		.filter(function(url){
+ 			if(this.onlyCrawl.length == 0)
+ 				return true;
+ 			else{
+ 				for (var i = 0; i < this.onlyCrawl.length; i++) {
+ 					if(url.indexOf(this.onlyCrawl[i]) > -1)
+ 						return true;
+ 				}
+ 			}
+ 		}.bind(this))
  		.uniq()
  		.value();
 
