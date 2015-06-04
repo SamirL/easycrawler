@@ -15,7 +15,8 @@ var crawler = new Crawler({
 	thread: 5,
 	logs: true,
 	depth: 2,
-	headers : {'user-agent' : 'easycrawler'},
+	headers : {'user-agent' : 'foobar'},
+	onlyCrawl : ['youtube.com'], //will only crawl youtube.com links
 	onSuccess : function(data){
 		//console.log(data.url);
 		//console.log(data.body);
@@ -31,5 +32,5 @@ var crawler = new Crawler({
 });
 
 
-crawler.crawl('http://www.test.com/');
+crawler.crawl('http://www.reddit.com/');
 ```
