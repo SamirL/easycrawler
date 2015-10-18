@@ -1,6 +1,6 @@
 {
   "name": "easycrawler",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "description": "Simple and Easy Crawler library for Node.js",
   "main": "index.js",
   "scripts": {

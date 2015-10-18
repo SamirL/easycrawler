@@ -16,7 +16,8 @@ var crawler = new Crawler({
 	logs: true,
 	depth: 2,
 	headers : {'user-agent' : 'foobar'},
-	onlyCrawl : ['youtube.com'], //will only crawl youtube.com links
+	onlyCrawl : ['youtube.com'], //will only crawl youtube.com links OR
+	reject : ['rutube'], //will reject links containing rutube
 	onSuccess : function(data){
 		//console.log(data.url);
 		//console.log(data.body);
