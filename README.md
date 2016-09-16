@@ -5,7 +5,7 @@ A simple webcrawler for Node.js supporting Concurrent Connections and Queues.
 
 ## Installation
 
-		npm install easycrawler
+	npm install easycrawler
 
 ## Usage
 ```javascript
