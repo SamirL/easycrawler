@@ -11,14 +11,22 @@
     "url": "git://github.com/SamirL/easycrawler.git"
   },
   "keywords": [
-    "crawler",
     "spider",
-    "nodejs",
-    "scraper"
+    "crawler",
+    "search",
+    "scraper",
+    "website",
+    "web-crawler",
+    "node-crawler",
+    "js-crawler",
+    "spider",
+    "web-search",
+    "links",
+    "url"
   ],
   "dependencies": {
-    "underscore": "1.8.3",
     "request": "2.42.0",
+    "underscore": "1.8.3",
     "url": "0.10.3"
   },
   "author": "Adil Lach <mesdevisdunet@gmail.com>",

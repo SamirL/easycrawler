@@ -1,8 +1,6 @@
-var _ = require('underscore');
-var request = require('request');
-var Url = require('url');
-var EventEmitter = require('events').EventEmitter;
-var output = new EventEmitter();
+const _ = require('underscore');
+const request = require('request');
+const Url = require('url');
 
 function Crawler(opts){
 
@@ -183,7 +181,6 @@ Crawler.prototype.load = function(url, depth) {
 
 Crawler.prototype.crawl = function(url){
   this.log('Starting crawl :', url);
-  // console.log(this.depth);
   this.queue(url, this.depth);
 
 }
