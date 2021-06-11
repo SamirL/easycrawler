@@ -1,5 +1,5 @@
 const _ = require('underscore');
-const request = require('request');
+const fetch = require("node-fetch").default;
 const Url = require('url');
 
 function Crawler(opts){
@@ -129,54 +129,47 @@ Crawler.prototype.getLinks = function(baseUrl, body){
 
 }
 
-Crawler.prototype.load = function(url, depth) {
+Crawler.prototype.load = async function(url, depth) {
   this.log('Loading url : ', url);
   this.active.push(url);
 
-  try{
-    request({url : url,headers : this.headers}, function(error, response, body){
-      if(!error && response.statusCode === 200){
-        if(this.onSuccess){
-          this.onSuccess({
-            url : url,
-            status : response.statusCode,
-            content : body,
-            response : response,
-            body : body
-          });
-        }
-        this.log('Url successfully loaded', url);
-        this.crawledUrls.push(url);
-        _.each(this.getLinks(url, body), function(link){
-          this.discoveredUrls.push(link);
-          this.queue(link, depth - 1);
-        }.bind(this));
-
-      }else if(error){
-        this.log('Error occured', error);
-        if(this.onError && response){
-          this.onError({
-            url : url,
-            status : response.statusCode || '400',
-            error : error,
-            content : body,
-            response : response,
-            body : body
-          });
-        }
+  let status, response;
+  await fetch(url, { headers: this.headers })
+    .then((res) => {
+      response = res;
+      status = response.status;
+      return res.text();
+    })
+    .then((body) => {
+      if (this.onSuccess) {
+        this.onSuccess({
+          url,
+          status,
+          content: body,
+          response,
+          body
+        });
       }
-      this.finished(url);
-    }.bind(this));
-  }catch(e){
-    this.log('Error occured', e.message);
-    if(this.onError){
-      this.onError({
-        url : url,
-        error : e.message
-      });
-    }
-  }
-
+      this.log('Url successfully loaded', url);
+      this.crawledUrls.push(url);
+      _.each(this.getLinks(url, body), (link) => {
+        this.discoveredUrls.push(link);
+        this.queue(link, depth - 1);
+      })
+    })
+    .catch((error) => {
+      this.log('Error occured', error);
+      if (this.onError && response) {
+        this.onError({
+          url,
+          status: status || '400',
+          error,
+          content: body,
+          response, 
+          body
+        })
+      }
+    })
 }
 
 Crawler.prototype.crawl = function(url){
